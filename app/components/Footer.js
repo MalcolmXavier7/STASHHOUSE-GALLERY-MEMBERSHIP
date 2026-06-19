@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col" style={{ gap: 12 }}>
             <span style={{ fontFamily: "var(--font-bebas)", fontSize: 15, letterSpacing: "0.18em", color: "#F4C20D" }}>CONTACT</span>
-            <span style={{ font: "400 15px var(--font-barlow, 'Barlow', sans-serif)", color: "#cfe0d8" }}>studio@stashhousegallery.com</span>
+            <span style={{ font: "400 15px var(--font-barlow, 'Barlow', sans-serif)", color: "#cfe0d8" }}>info@malcolmxavier.com</span>
             <span style={{ font: "400 15px var(--font-barlow, 'Barlow', sans-serif)", color: "#cfe0d8" }}>By appointment</span>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function Footer() {
         style={{ maxWidth: 1180, margin: "40px auto 0", paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.12)", gap: 12 }}
       >
         <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: "#7e9389" }}>
-          &copy; 2026 StashHouse Gallery &middot; A Malcolm Xavior Seven project
+          &copy; 2026 StashHouse Gallery &middot; A Malcolm Xavior 7 project
         </span>
         <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: "#7e9389" }}>
           Made by hand. ✦

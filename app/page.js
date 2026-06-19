@@ -25,7 +25,7 @@ const tiers = [
     features: [
       "Hand-original commission · 8×10 canvas",
       "Acrylic & oil on canvas",
-      "Signed by Malcolm Xavior Seven",
+      "Signed by Malcolm Xavior 7",
       "Certificate of authenticity",
       "StashHouse member status",
     ],
@@ -42,7 +42,7 @@ const tiers = [
     features: [
       "Hand-original commission · 18×24 canvas",
       "Acrylic, oil & gold leaf on canvas",
-      "Signed by Malcolm Xavior Seven",
+      "Signed by Malcolm Xavior 7",
       "Certificate of authenticity",
       "StashHouse member status",
       "Priority access to exclusive drops",
@@ -60,7 +60,7 @@ const tiers = [
     features: [
       "Hand-original commission · 24×36 canvas",
       "Acrylic, oil & full gold leaf",
-      "Signed by Malcolm Xavior Seven",
+      "Signed by Malcolm Xavior 7",
       "Certificate of authenticity",
       "Lifetime StashHouse standing",
       "Studio process film of your piece",
@@ -115,7 +115,7 @@ export default function Home() {
               YOU ARE<br /><span style={{ color: "#E8531C" }}>ENOUGH.</span>
             </h1>
             <p style={{ font: "300 clamp(18px,1.6vw,22px)/1.55 var(--font-barlow, 'Barlow', sans-serif)", color: "#3a4a44", maxWidth: "50ch", margin: "26px 0 0" }}>
-              Malcolm Xavior Seven creates hand-original commissions at the intersection of art, technology, and culture. 15+ years in hip-hop visual culture. 9K+ sales and 4M+ views on NTWRK. This isn&rsquo;t a commission shop — it&rsquo;s a community entry point for people who choose intention over performance.
+              Malcolm Xavior 7 creates hand-original commissions at the intersection of art, technology, and culture. 15+ years in hip-hop visual culture. 9K+ sales and 4M+ views on NTWRK. This isn&rsquo;t a commission shop — it&rsquo;s a community entry point for people who choose intention over performance.
             </p>
             <div className="flex flex-wrap" style={{ gap: 14, marginTop: 34 }}>
               <a
@@ -136,11 +136,11 @@ export default function Home() {
           </div>
           <div className="justify-self-center w-full" style={{ maxWidth: 520, background: "#fff", padding: 12, boxShadow: "0 26px 56px rgba(22,63,55,0.22)", border: "1px solid #ece6d8" }}>
             <div style={{ position: "relative", width: "100%", paddingBottom: "100%", overflow: "hidden" }}>
-              <img src="/stashhouse-hero.png" alt="StashHouse Gallery — Malcolm Xavior Seven" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <img src="/stashhouse-hero.png" alt="StashHouse Gallery — Malcolm Xavior 7" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </div>
             <div className="flex justify-between items-baseline" style={{ padding: "14px 4px 4px" }}>
               <span style={{ fontFamily: "var(--font-bebas)", fontSize: 16, letterSpacing: "0.06em", color: "#163F37" }}>STASHHOUSE GALLERY</span>
-              <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: "#7a8580" }}>Malcolm Xavior Seven</span>
+              <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: "#7a8580" }}>Malcolm Xavior 7</span>
             </div>
           </div>
         </div>

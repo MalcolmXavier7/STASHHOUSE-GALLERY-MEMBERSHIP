@@ -37,6 +37,7 @@ export default function IntakePage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
+  const [membershipId, setMembershipId] = useState(null);
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
@@ -51,6 +52,8 @@ export default function IntakePage() {
         body: JSON.stringify({ ...form, submittedAt: new Date().toISOString() }),
       });
       if (!res.ok) throw new Error("Submission failed");
+      const data = await res.json();
+      setMembershipId(data.membershipId);
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again or email us directly.");
@@ -86,15 +89,61 @@ export default function IntakePage() {
         <div style={{ maxWidth: 840, margin: "0 auto" }}>
 
           {submitted ? (
-            <div className="text-center" style={{ border: "3px solid #F4C20D", borderRadius: 10, padding: "clamp(40px,6vw,72px) clamp(24px,4vw,48px)", background: "#fff" }}>
-              <Sunflower style={{ width: 78, height: 78, margin: "0 auto 22px", animation: "spin-slow 24s linear infinite" }} />
-              <h2 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(38px,5vw,60px)", lineHeight: 0.94, color: "#163F37", margin: 0 }}>
-                WELCOME TO STASHHOUSE
-              </h2>
-              <p style={{ font: "300 19px/1.6 var(--font-barlow, 'Barlow', sans-serif)", color: "#3a4a44", maxWidth: "50ch", margin: "18px auto 0" }}>
-                Your intake is in. Malcolm Xavior Seven will review your story and reach out personally before work begins. One piece. One owner. Yours.
-              </p>
-              <div className="flex justify-center flex-wrap" style={{ gap: 14, marginTop: 32 }}>
+            <div className="flex flex-col items-center" style={{ gap: "clamp(28px,4vw,40px)" }}>
+              {/* Membership Card */}
+              <div style={{ width: "100%", maxWidth: 480, background: "#163F37", borderRadius: 12, overflow: "hidden", boxShadow: "0 20px 60px rgba(22,63,55,0.35)", border: "3px solid #F4C20D" }}>
+                <div style={{ height: 8, background: "#F4C20D" }} />
+                <div style={{ padding: "clamp(32px,5vw,48px) clamp(28px,4vw,40px)", textAlign: "center" }}>
+                  <div className="flex justify-center" style={{ marginBottom: 20 }}>
+                    <span style={{ display: "inline-flex", flexDirection: "column", lineHeight: 0.8, background: "#E8531C", padding: "8px 12px 6px", borderRadius: 3 }}>
+                      <span style={{ fontFamily: "var(--font-bebas)", fontSize: 18, letterSpacing: "0.02em", color: "#F4C20D" }}>STASH HOUSE</span>
+                      <span style={{ fontFamily: "var(--font-bebas)", fontSize: 10, letterSpacing: "0.34em", color: "#F4C20D" }}>GALLERY</span>
+                    </span>
+                  </div>
+                  <div style={{ fontFamily: "var(--font-bebas)", fontSize: 13, letterSpacing: "0.2em", color: "#aec7bd", marginBottom: 8 }}>
+                    MEMBERSHIP NUMBER
+                  </div>
+                  <div style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(64px,10vw,96px)", lineHeight: 1, color: "#F4C20D", margin: "0 0 6px" }}>
+                    {membershipId || "SHG-001"}
+                  </div>
+                  <div style={{ height: 1, background: "rgba(255,255,255,0.16)", margin: "20px 0" }} />
+                  <div style={{ fontFamily: "var(--font-bebas)", fontSize: 14, letterSpacing: "0.16em", color: "#aec7bd", marginBottom: 4 }}>MEMBER</div>
+                  <div style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(24px,3vw,32px)", color: "#fff", lineHeight: 1 }}>
+                    {form.name || "—"}
+                  </div>
+                  <div style={{ height: 1, background: "rgba(255,255,255,0.16)", margin: "20px 0" }} />
+                  <div className="flex justify-between" style={{ padding: "0 8px" }}>
+                    <div>
+                      <div style={{ fontFamily: "var(--font-bebas)", fontSize: 11, letterSpacing: "0.16em", color: "#aec7bd" }}>TIER</div>
+                      <div style={{ fontFamily: "var(--font-bebas)", fontSize: 18, color: "#fff" }}>{form.tier || "MEDIUM TILT"}</div>
+                    </div>
+                    <div>
+                      <div style={{ fontFamily: "var(--font-bebas)", fontSize: 11, letterSpacing: "0.16em", color: "#aec7bd" }}>ISSUED</div>
+                      <div style={{ fontFamily: "var(--font-bebas)", fontSize: 18, color: "#fff" }}>{new Date().toLocaleDateString("en-US", { month: "short", year: "numeric" }).toUpperCase()}</div>
+                    </div>
+                    <div>
+                      <div style={{ fontFamily: "var(--font-bebas)", fontSize: 11, letterSpacing: "0.16em", color: "#aec7bd" }}>STATUS</div>
+                      <div style={{ fontFamily: "var(--font-bebas)", fontSize: 18, color: "#F4C20D" }}>ACTIVE</div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ background: "#122F2A", padding: "14px 0", textAlign: "center" }}>
+                  <span style={{ fontFamily: "var(--font-bebas)", fontSize: 12, letterSpacing: "0.2em", color: "#7e9389" }}>THIS IS YOUR NUMBER ✦ ONE PIECE. ONE OWNER.</span>
+                </div>
+              </div>
+
+              {/* Welcome message */}
+              <div className="text-center" style={{ maxWidth: 500 }}>
+                <Sunflower style={{ width: 48, height: 48, margin: "0 auto 16px", animation: "spin-slow 24s linear infinite" }} />
+                <h2 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(32px,4vw,44px)", lineHeight: 0.94, color: "#163F37", margin: 0 }}>
+                  WELCOME TO STASHHOUSE
+                </h2>
+                <p style={{ font: "300 17px/1.6 var(--font-barlow, 'Barlow', sans-serif)", color: "#3a4a44", margin: "14px 0 0" }}>
+                  Your intake is in. Malcolm Xavior 7 will review your story and reach out personally before work begins.
+                </p>
+              </div>
+
+              <div className="flex justify-center flex-wrap" style={{ gap: 14 }}>
                 <Link href="/" style={{ fontFamily: "var(--font-bebas)", fontSize: 19, letterSpacing: "0.06em", padding: "14px 30px 11px", borderRadius: 3, background: "#163F37", color: "#fff" }}>
                   BACK TO MEMBERSHIP
                 </Link>
@@ -127,7 +176,7 @@ export default function IntakePage() {
                   </label>
                   <label className="flex flex-col" style={{ gap: 8 }}>
                     <span style={labelStyle}>MEMBERSHIP TIER</span>
-                    <input value={form.tier} onChange={set("tier")} placeholder="Induction / Cosign / Legacy" style={inputStyle} />
+                    <input value={form.tier} onChange={set("tier")} placeholder="Small Tilt / Medium Tilt / Large Tilt" style={inputStyle} />
                   </label>
                 </div>
                 <label className="flex flex-col" style={{ gap: 8, marginTop: 18 }}>

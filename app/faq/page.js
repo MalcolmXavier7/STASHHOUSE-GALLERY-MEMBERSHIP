@@ -10,7 +10,7 @@ const faqs = [
   { q: "How does pricing and payment work?", a: "Each tier is a one-time commission fee covering the original artwork, authentication, and shipping within the continental US. Payment secures your spot in the queue — membership is limited and released in waves." },
   { q: "What's the turnaround time?", a: "Hand-originals take time. Most commissions are completed within 6–10 weeks of a finished intake, with progress notes along the way. This is not a print on demand." },
   { q: "Can I cancel or get a refund?", a: "You can cancel before work begins for a full refund. Once paint hits canvas the commission is non-refundable — every piece is made for one owner and can't be resold as stock." },
-  { q: "What does \"hand-original\" actually mean?", a: "Exactly that. Acrylic, oil, and gold leaf applied by hand by Malcolm Xavior Seven on an 18×24 canvas. Not a reproduction, not a print, not AI. One piece. One owner." },
+  { q: "What does \"hand-original\" actually mean?", a: "Exactly that. Acrylic, oil, and gold leaf applied by hand by Malcolm Xavior 7 on an 18×24 canvas. Not a reproduction, not a print, not AI. One piece. One owner." },
   { q: "Who owns the artwork and the rights?", a: "You own the physical piece outright. MX7 retains the right to photograph and display the work as part of the StashHouse lineage and portfolio; commercial reuse of the image stays with the artist." },
   { q: "Are there community rules?", a: "StashHouse is a community of collectors who stand for something real. Respect the work, respect each other, no flipping for profit. Members who get it keep their standing — and their access to drops." },
 ];

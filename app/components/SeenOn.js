@@ -26,6 +26,7 @@ export default function SeenOn() {
               <img
                 src={logo.src}
                 alt={logo.alt}
+                loading="lazy"
                 style={{ height: "clamp(36px,5vw,56px)", width: "auto", objectFit: "contain", filter: "grayscale(100%)", opacity: 0.6, transition: "filter 0.3s, opacity 0.3s" }}
                 onMouseOver={(e) => { e.currentTarget.style.filter = "grayscale(0%)"; e.currentTarget.style.opacity = "1"; }}
                 onMouseOut={(e) => { e.currentTarget.style.filter = "grayscale(100%)"; e.currentTarget.style.opacity = "0.6"; }}

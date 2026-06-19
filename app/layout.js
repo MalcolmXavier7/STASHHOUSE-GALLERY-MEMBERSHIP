@@ -17,11 +17,11 @@ const bebasNeue = Bebas_Neue({
 export const metadata = {
   title: "StashHouse Gallery — Membership Commissions",
   description:
-    "Hand-original commission artwork by Malcolm Xavior Seven. Acrylic, oil, and gold leaf on canvas. One piece. One owner.",
+    "Hand-original commission artwork by Malcolm Xavior 7. Acrylic, oil, and gold leaf on canvas. One piece. One owner.",
   openGraph: {
     title: "StashHouse Gallery — Membership Commissions",
     description:
-      "Hand-original commissions by Malcolm Xavior Seven. One piece. One owner.",
+      "Hand-original commissions by Malcolm Xavior 7. One piece. One owner.",
     type: "website",
     locale: "en_US",
     siteName: "StashHouse Gallery",
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "StashHouse Gallery — Membership Commissions",
     description:
-      "Hand-original commissions by Malcolm Xavior Seven. One piece. One owner.",
+      "Hand-original commissions by Malcolm Xavior 7. One piece. One owner.",
   },
 };
 
