@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# StashHouse Gallery — Membership Platform
 
-## Getting Started
+Hand-original commission platform by **Malcolm Xavior 7**. Art, technology, and culture — built by hand, amplified by intention.
 
-First, run the development server:
+> *"You are enough. Your process is valid."*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What This Is
+
+StashHouse Gallery Memberships are hand-original commission artwork — acrylic, oil, and gold leaf on canvas. Each piece is painted by Malcolm Xavior 7, signed, authenticated, and made for one owner. This isn't a print shop. It's a community entry point for people who choose intention over performance.
+
+**Live:** [stashhousegallery.shop](https://www.stashhousegallery.shop)
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | [Next.js 16](https://nextjs.org) (App Router) |
+| Styling | [Tailwind CSS 4](https://tailwindcss.com) + inline styles |
+| Fonts | Bebas Neue (headers) + Barlow (body) via Google Fonts |
+| Payments | [Stripe Payment Links](https://stripe.com/payments/payment-links) |
+| Email | [Resend](https://resend.com) — transactional email on intake submission |
+| Hosting | [Vercel](https://vercel.com) |
+| Domain | stashhousegallery.shop |
+
+## Pages
+
+| Route | Purpose |
+|---|---|
+| `/` | Landing — hero, mission statement, membership tiers, process, past commissions carousel |
+| `/intake` | Post-payment intake form — 3 sections (Who You Are / The Piece / The Story) |
+| `/faq` | FAQ accordion with guidelines, process, and community rules |
+| `/api/intake` | API endpoint — validates, assigns membership number, sends email notification |
+
+## Features
+
+- **Three membership tiers** — Small Tilt ($100), Medium Tilt ($200), Large Tilt ($500) with split down payment / balance on delivery
+- **Stripe checkout** — Payment links redirect to `/intake` after successful payment with tier info in URL params
+- **Membership numbering** — Sequential IDs starting at SHG-001, displayed on a branded membership card after submission
+- **Email notifications** — Styled HTML email sent to `info@malcolmxavier.com` with full buyer info and commission details on every intake
+- **As Seen On ticker** — Auto-scrolling logo carousel (Complex, NTWRK, Whatnot, NBA, Barrel & Flow Fest, etc.)
+- **Past Commissions carousel** — Smooth infinite scroll of commission artwork
+- **Sunflower motif** — SVG sunflower used as a spinning decorative element throughout the site
+- **XSS protection** — All user input escaped in email HTML rendering
+
+## Brand System
+
+| Element | Value |
+|---|---|
+| Background | Cream `#FCF9F2` |
+| Primary | Forest Green `#163F37` |
+| Accent | Orange `#E8531C` |
+| Highlight | Gold `#F4C20D` |
+| Headers | Bebas Neue |
+| Body | Barlow (300–700) |
+| Motif | Sunflower SVG with slow spin animation |
+
+## Project Structure
+
+```
+app/
+├── page.js                 # Landing page
+├── layout.js               # Root layout (fonts, metadata)
+├── globals.css             # Global styles + animations
+├── intake/page.js          # Intake form + membership card
+├── faq/page.js             # FAQ accordion
+├── api/intake/route.js     # Form submission API
+└── components/
+    ├── Nav.js              # Sticky navigation
+    ├── Footer.js           # Site footer
+    ├── Sunflower.js        # SVG sunflower component
+    ├── SeenOn.js           # Logo ticker carousel
+    └── PastWork.js         # Commission artwork carousel
+public/
+├── stashhouse-hero.png     # Hero image
+├── logos/                  # Brand logos for As Seen On
+└── commsionns/             # Past commission photos
+data/
+└── member-count.json       # Membership counter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Variable | Purpose |
+|---|---|
+| `RESEND_API_KEY` | Resend API key for sending intake notification emails |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Add a `.env.local` file with your Resend API key:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+RESEND_API_KEY=re_your_key_here
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## The Artist
 
-## Deploy on Vercel
+Malcolm Xavior 7 has spent 15+ years in hip-hop visual culture, built NTWRK to 9K+ sales and 4M+ views, and now creates hand-original artwork combined with AI systems. He's not a "coder who paints" — he's a builder who picks the tool that serves the intention.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The mission: Show people they're enough. That their process is valid. That they can build something real if they're willing to be consistent and intentional.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Love Yours Club** — self-love as a creative movement.
+
+## Checkout Flow
+
+```
+1. User selects tier on landing page
+2. → Stripe Payment Link (down payment)
+3. → Stripe redirects to /intake?tier=small|medium|large
+4. → User fills out intake form (who, piece, story)
+5. → API assigns membership number (SHG-001, SHG-002...)
+6. → Email sent to info@malcolmxavier.com with all details
+7. → Membership card displayed with number, name, tier, status
+```
+
+---
+
+Built by Malcolm Xavior 7 · Made by hand. ✦
