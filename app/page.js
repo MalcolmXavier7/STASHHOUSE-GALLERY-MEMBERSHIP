@@ -12,7 +12,7 @@ const tiers = [
     down: 50,
     balance: 50,
     description: "Your entry point into StashHouse Gallery.",
-    stripeLink: "#",
+    stripeLink: "https://buy.stripe.com/fZu9AT6tCg0LfZQ8orak00Y",
   },
   {
     id: "medium",
@@ -23,7 +23,7 @@ const tiers = [
     balance: 100,
     description: "The core entry. Your full-size statement piece.",
     featured: true,
-    stripeLink: "#",
+    stripeLink: "https://buy.stripe.com/6oU9ATf084i37tkbADak00Z",
   },
   {
     id: "large",
@@ -33,7 +33,7 @@ const tiers = [
     down: 250,
     balance: 250,
     description: "Museum-scale. Command the room.",
-    stripeLink: "#",
+    stripeLink: "https://buy.stripe.com/eVq00jdW4aGraFwfQTak010",
   },
 ];
 
