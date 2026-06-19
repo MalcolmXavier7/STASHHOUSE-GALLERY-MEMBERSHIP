@@ -4,7 +4,7 @@ import { join } from "path";
 import { Resend } from "resend";
 
 const COUNTER_PATH = join(process.cwd(), "data", "member-count.json");
-const NOTIFY_EMAIL = "info@malcolmxavier.com";
+const NOTIFY_EMAIL = "info@malcolmxavior7.com";
 
 let _resend = null;
 function getResend() {
@@ -111,7 +111,7 @@ export async function POST(request) {
   if (resend) {
     try {
       await resend.emails.send({
-        from: "StashHouse Gallery <noreply@malcolmxavier.com>",
+        from: "StashHouse Gallery <noreply@malcolmxavior7.com>",
         to: NOTIFY_EMAIL,
         subject: `New Commission: ${membershipId} — ${submission.name} (${submission.tier || "—"})`,
         html: buildEmailHtml(submission),

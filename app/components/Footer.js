@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col" style={{ gap: 12 }}>
             <span style={{ fontFamily: "var(--font-bebas)", fontSize: 15, letterSpacing: "0.18em", color: "#F4C20D" }}>CONTACT</span>
-            <span style={{ font: "400 15px var(--font-barlow, 'Barlow', sans-serif)", color: "#cfe0d8" }}>info@malcolmxavier.com</span>
+            <span style={{ font: "400 15px var(--font-barlow, 'Barlow', sans-serif)", color: "#cfe0d8" }}>info@malcolmxavior7.com</span>
             <span style={{ font: "400 15px var(--font-barlow, 'Barlow', sans-serif)", color: "#cfe0d8" }}>By appointment</span>
           </div>
         </div>

@@ -36,7 +36,7 @@ StashHouse Gallery Memberships are hand-original commission artwork — acrylic,
 - **Three membership tiers** — Small Tilt ($100), Medium Tilt ($200), Large Tilt ($500) with split down payment / balance on delivery
 - **Stripe checkout** — Payment links redirect to `/intake` after successful payment with tier info in URL params
 - **Membership numbering** — Sequential IDs starting at SHG-001, displayed on a branded membership card after submission
-- **Email notifications** — Styled HTML email sent to `info@malcolmxavier.com` with full buyer info and commission details on every intake
+- **Email notifications** — Styled HTML email sent to `info@malcolmxavior7.com` with full buyer info and commission details on every intake
 - **As Seen On ticker** — Auto-scrolling logo carousel (Complex, NTWRK, Whatnot, NBA, Barrel & Flow Fest, etc.)
 - **Past Commissions carousel** — Smooth infinite scroll of commission artwork
 - **Sunflower motif** — SVG sunflower used as a spinning decorative element throughout the site
@@ -113,7 +113,7 @@ The mission: Show people they're enough. That their process is valid. That they 
 3. → Stripe redirects to /intake?tier=small|medium|large
 4. → User fills out intake form (who, piece, story)
 5. → API assigns membership number (SHG-001, SHG-002...)
-6. → Email sent to info@malcolmxavier.com with all details
+6. → Email sent to info@malcolmxavior7.com with all details
 7. → Membership card displayed with number, name, tier, status
 ```
 
