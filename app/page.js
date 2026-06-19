@@ -1,229 +1,270 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Sunflower from "./components/Sunflower";
+import SeenOn from "./components/SeenOn";
+
+const commitBullets = [
+  "A hand-original — painted, not printed, not generated",
+  "Art that carries AI amplification, never replacement",
+  "Entry into a community that values process over performance",
+  "Part of the Love Yours Club — self-love as a creative movement",
+  "Signed, authenticated, and part of the StashHouse lineage",
+  "Direct connection to 15+ years of hip-hop visual culture",
+];
 
 const tiers = [
   {
-    id: "small",
     name: "Small Tilt",
-    size: "8×10",
-    total: 100,
+    price: "$100",
+    tag: "ENTRY POINT",
+    line: "Your entry point into StashHouse Gallery. 8×10 canvas.",
+    features: [
+      "Hand-original commission · 8×10 canvas",
+      "Acrylic & oil on canvas",
+      "Signed by Malcolm Xavior Seven",
+      "Certificate of authenticity",
+      "StashHouse member status",
+    ],
+    accent: "green",
     down: 50,
     balance: 50,
-    description: "Your entry point into StashHouse Gallery.",
     stripeLink: "https://buy.stripe.com/fZu9AT6tCg0LfZQ8orak00Y",
   },
   {
-    id: "medium",
     name: "Medium Tilt",
-    size: "18×24",
-    total: 200,
+    price: "$200",
+    tag: "CORE ENTRY",
+    line: "The core entry. Your full-size statement piece. 18×24 canvas.",
+    features: [
+      "Hand-original commission · 18×24 canvas",
+      "Acrylic, oil & gold leaf on canvas",
+      "Signed by Malcolm Xavior Seven",
+      "Certificate of authenticity",
+      "StashHouse member status",
+      "Priority access to exclusive drops",
+    ],
+    accent: "featured",
     down: 100,
     balance: 100,
-    description: "The core entry. Your full-size statement piece.",
-    featured: true,
     stripeLink: "https://buy.stripe.com/6oU9ATf084i37tkbADak00Z",
   },
   {
-    id: "large",
     name: "Large Tilt",
-    size: "24×36",
-    total: 500,
+    price: "$500",
+    tag: "COLLECTOR",
+    line: "Museum-scale. Command the room. 24×36 canvas.",
+    features: [
+      "Hand-original commission · 24×36 canvas",
+      "Acrylic, oil & full gold leaf",
+      "Signed by Malcolm Xavior Seven",
+      "Certificate of authenticity",
+      "Lifetime StashHouse standing",
+      "Studio process film of your piece",
+    ],
+    accent: "pink",
     down: 250,
     balance: 250,
-    description: "Museum-scale. Command the room.",
     stripeLink: "https://buy.stripe.com/eVq00jdW4aGraFwfQTak010",
   },
 ];
 
+const themes = {
+  green: {
+    cardBg: "#fff", cardBorder: "1px solid #e6dfce", nameColor: "#163F37", priceColor: "#163F37",
+    lineColor: "#6b6b6b", featColor: "#2a2a2a", tickColor: "#4A8B3F", ctaBg: "#163F37", ctaFg: "#fff",
+    tagBg: "#4A8B3F", tagFg: "#fff", topBar: "#4A8B3F", rule: "#efe9da",
+  },
+  featured: {
+    cardBg: "#163F37", cardBorder: "3px solid #F4C20D", nameColor: "#fff", priceColor: "#F4C20D",
+    lineColor: "#cfe0d8", featColor: "#e7efe9", tickColor: "#F4C20D", ctaBg: "#F4C20D", ctaFg: "#163F37",
+    tagBg: "#E8531C", tagFg: "#fff", topBar: "#F4C20D", rule: "rgba(255,255,255,0.16)",
+  },
+  pink: {
+    cardBg: "#fff", cardBorder: "1px solid #e6dfce", nameColor: "#163F37", priceColor: "#163F37",
+    lineColor: "#6b6b6b", featColor: "#2a2a2a", tickColor: "#E5468C", ctaBg: "#E8531C", ctaFg: "#fff",
+    tagBg: "#E5468C", tagFg: "#fff", topBar: "#E5468C", rule: "#efe9da",
+  },
+};
+
+const processSteps = [
+  { n: "01", t: "Choose your standing", d: "Pick the tier that reflects what this piece means to you." },
+  { n: "02", t: "Secure your spot", d: "Membership is limited and intentional. Your payment holds your place in the lineage." },
+  { n: "03", t: "Tell your story", d: "The intake is where MX7 learns who you are — your vision, your meaning, your world." },
+  { n: "04", t: "The work begins", d: "AI amplifies the vision. The hand finishes it. Acrylic, oil, gold leaf — painted for one owner." },
+  { n: "05", t: "Authenticated", d: "Signed, documented, sealed. Your piece enters the StashHouse record." },
+  { n: "06", t: "You're in", d: "Your piece ships. You join a community that believes process matters and people are enough." },
+];
+
 export default function Home() {
-  const [hoveredTier, setHoveredTier] = useState(null);
-
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Nav */}
-      <nav className="px-6 py-4 max-w-7xl mx-auto flex justify-between items-center">
-        <span
-          className="text-2xl font-bold"
-          style={{ fontFamily: "var(--font-bebas)", color: "#FFFF00", letterSpacing: "0.05em" }}
-        >
-          STASHHOUSE
-        </span>
-        <div className="flex gap-6 text-sm text-gray-400">
-          <Link href="/faq" className="hover:text-white transition-colors">
-            FAQ
-          </Link>
-          <a href="mailto:commissions@stashhousegallery.com" className="hover:text-white transition-colors">
-            Contact
-          </a>
-        </div>
-      </nav>
+    <div style={{ fontFamily: "var(--font-barlow, 'Barlow', sans-serif)", background: "#FCF9F2", color: "#2a2a2a", minHeight: "100vh" }}>
+      <Nav />
 
-      {/* Hero */}
-      <section className="px-6 py-20 md:py-32 max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h1
-            className="text-5xl md:text-7xl font-bold mb-6"
-            style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.05em" }}
-          >
-            <span style={{ color: "#FFFF00" }}>STASHHOUSE</span>
-          </h1>
-          <h2
-            className="text-3xl md:text-5xl font-bold mb-6"
-            style={{ fontFamily: "var(--font-bebas)", color: "#0088CC" }}
-          >
-            Membership
-          </h2>
-          <p className="text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
-            Hand-original commissions. Limited first round: 50 members.
-          </p>
-          <p className="text-lg text-gray-400 max-w-2xl">
-            You choose the vision. Malcolm Xavior Seven brings it to life.
-            Acrylic, oil, gold leaf on canvas.
-          </p>
-        </div>
-
-        {/* What's Included */}
-        <div
-          className="grid md:grid-cols-3 gap-8 mb-20 py-12 border-t border-b"
-          style={{ borderColor: "#FFFF00" }}
-        >
+      {/* HERO */}
+      <section style={{ background: "#FCF9F2", padding: "clamp(48px,6vw,88px) clamp(20px,5vw,56px) clamp(56px,7vw,96px)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1.02fr 0.98fr", gap: "clamp(32px,5vw,72px)", alignItems: "center" }}>
           <div>
-            <p style={{ color: "#FFFF00", fontFamily: "var(--font-bebas)", fontSize: "0.875rem", letterSpacing: "0.1em" }}>
-              TIMELINE
+            <span style={{ display: "inline-block", background: "#E8531C", color: "#F4C20D", fontFamily: "var(--font-bebas)", fontSize: 15, letterSpacing: "0.16em", padding: "7px 14px 5px", borderRadius: 3 }}>
+              STASHHOUSE GALLERY · MEMBERSHIP
+            </span>
+            <h1 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(54px,8vw,108px)", lineHeight: 0.88, color: "#163F37", margin: "22px 0 0" }}>
+              YOU ARE<br /><span style={{ color: "#E8531C" }}>ENOUGH.</span>
+            </h1>
+            <p style={{ font: "300 clamp(18px,1.6vw,22px)/1.55 var(--font-barlow, 'Barlow', sans-serif)", color: "#3a4a44", maxWidth: "50ch", margin: "26px 0 0" }}>
+              Malcolm Xavior Seven creates hand-original commissions at the intersection of art, technology, and culture. 15+ years in hip-hop visual culture. 9K+ sales and 4M+ views on NTWRK. This isn&rsquo;t a commission shop — it&rsquo;s a community entry point for people who choose intention over performance.
             </p>
-            <p className="text-2xl font-bold mt-2">4&ndash;6 Weeks</p>
-            <p className="text-gray-400 mt-2">From approved concept to finished piece.</p>
+            <div className="flex flex-wrap" style={{ gap: 14, marginTop: 34 }}>
+              <a
+                href="#memberships"
+                className="transition-all duration-150 hover:bg-[#163F37] hover:text-[#F4C20D] hover:scale-[1.03]"
+                style={{ fontFamily: "var(--font-bebas)", fontSize: 21, letterSpacing: "0.06em", padding: "16px 34px 13px", borderRadius: 3, background: "#E8531C", color: "#fff" }}
+              >
+                VIEW MEMBERSHIPS
+              </a>
+              <Link
+                href="/faq"
+                className="transition-all duration-150 hover:bg-[#163F37] hover:text-white hover:border-[#163F37]"
+                style={{ fontFamily: "var(--font-bebas)", fontSize: 21, letterSpacing: "0.06em", padding: "15px 32px 12px", borderRadius: 3, border: "2px solid #163F37", color: "#163F37" }}
+              >
+                HOW IT WORKS
+              </Link>
+            </div>
           </div>
-          <div>
-            <p style={{ color: "#0088CC", fontFamily: "var(--font-bebas)", fontSize: "0.875rem", letterSpacing: "0.1em" }}>
-              WHAT YOU CAN CREATE
-            </p>
-            <p className="text-sm mt-2 text-gray-300">
-              Characters &bull; Anime &bull; Animals &bull; Flowers &bull; Abstract &bull; Your vision
-            </p>
-          </div>
-          <div>
-            <p style={{ color: "#FFD700", fontFamily: "var(--font-bebas)", fontSize: "0.875rem", letterSpacing: "0.1em" }}>
-              WHAT&rsquo;S EXCLUDED
-            </p>
-            <p className="text-sm mt-2 text-gray-300">No portraits (no realistic faces or likenesses)</p>
+          <div className="justify-self-center w-full" style={{ maxWidth: 520, background: "#fff", padding: 12, boxShadow: "0 26px 56px rgba(22,63,55,0.22)", border: "1px solid #ece6d8" }}>
+            <div style={{ position: "relative", width: "100%", paddingBottom: "100%", overflow: "hidden" }}>
+              <img src="/stashhouse-hero.png" alt="StashHouse Gallery — Malcolm Xavior Seven" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            </div>
+            <div className="flex justify-between items-baseline" style={{ padding: "14px 4px 4px" }}>
+              <span style={{ fontFamily: "var(--font-bebas)", fontSize: 16, letterSpacing: "0.06em", color: "#163F37" }}>STASHHOUSE GALLERY</span>
+              <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: "#7a8580" }}>Malcolm Xavior Seven</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Tier Cards */}
-      <section className="px-6 py-20 max-w-7xl mx-auto">
-        <h3 className="text-4xl font-bold mb-16" style={{ fontFamily: "var(--font-bebas)" }}>
-          Choose Your Tier
-        </h3>
+      <SeenOn />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {tiers.map((tier) => (
-            <div
-              key={tier.id}
-              onMouseEnter={() => setHoveredTier(tier.id)}
-              onMouseLeave={() => setHoveredTier(null)}
-              className={`relative p-8 border-2 transition-all duration-300 ${
-                tier.featured
-                  ? "border-yellow-300 bg-yellow-500/5 scale-105 md:scale-110"
-                  : "border-gray-700 bg-gray-950"
-              } ${hoveredTier === tier.id ? "border-cyan-400" : ""}`}
-            >
-              {tier.featured && (
-                <div
-                  className="absolute top-0 left-0 right-0 text-center py-2 text-sm font-bold"
-                  style={{ fontFamily: "var(--font-bebas)", color: "#FFFF00", letterSpacing: "0.1em" }}
-                >
-                  CORE ENTRY
-                </div>
-              )}
+      {/* WHAT IT IS */}
+      <section style={{ background: "#fff", padding: "clamp(56px,8vw,104px) clamp(20px,5vw,56px)" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(32px,5vw,72px)", alignItems: "center" }}>
+          <div>
+            <span style={{ display: "inline-block", background: "#E8531C", color: "#F4C20D", fontFamily: "var(--font-bebas)", fontSize: 14, letterSpacing: "0.16em", padding: "6px 12px 4px", borderRadius: 3 }}>
+              THE MISSION
+            </span>
+            <h2 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(38px,5vw,68px)", lineHeight: 0.92, color: "#163F37", margin: "18px 0 0" }}>
+              YOUR PROCESS<br />IS VALID.
+            </h2>
+            <p style={{ font: "300 clamp(17px,1.5vw,20px)/1.6 var(--font-barlow, 'Barlow', sans-serif)", color: "#3a4a44", margin: "22px 0 0" }}>
+              MX7 isn&rsquo;t a &ldquo;coder who paints&rdquo; — he&rsquo;s a builder who picks the tool that serves the intention. AI amplifies the vision. The hand finishes the work. Every piece starts with your story and becomes something that didn&rsquo;t exist before — acrylic, oil, and gold leaf on canvas, signed and authenticated. When you commission from StashHouse, you&rsquo;re joining a lineage of people who believe that consistency, intention, and self-love are worth building on.
+            </p>
+          </div>
+          <div className="flex flex-col" style={{ gap: 14 }}>
+            {commitBullets.map((b) => (
+              <div key={b} className="flex items-start" style={{ gap: 14, paddingBottom: 14, borderBottom: "1px solid #efe9da" }}>
+                <span style={{ fontFamily: "var(--font-bebas)", fontSize: 16, color: "#E8531C", flex: "none", marginTop: 1 }}>✦</span>
+                <span style={{ font: "500 16px/1.4 var(--font-barlow, 'Barlow', sans-serif)", color: "#163F37" }}>{b}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className={tier.featured ? "mt-8" : ""}>
-                <h4
-                  className="text-3xl font-bold mb-2"
-                  style={{ fontFamily: "var(--font-bebas)", color: tier.featured ? "#FFFF00" : "#0088CC" }}
-                >
-                  {tier.name}
-                </h4>
-                <p className="text-gray-400 mb-6">{tier.size} canvas</p>
-                <p className="text-gray-300 mb-8 leading-relaxed">{tier.description}</p>
-
-                <div className="bg-black/50 p-6 mb-8 border border-gray-700">
-                  <p className="text-sm text-gray-400 mb-2">INVESTMENT</p>
-                  <p className="text-4xl font-bold mb-6" style={{ color: "#FFD700" }}>
-                    ${tier.total}
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Down payment</span>
-                      <span className="text-white">${tier.down}</span>
+      {/* TIERS */}
+      <section id="memberships" style={{ background: "#FCF9F2", padding: "clamp(56px,8vw,104px) clamp(20px,5vw,56px)" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+          <div className="text-center" style={{ marginBottom: "clamp(36px,5vw,60px)" }}>
+            <span style={{ display: "inline-block", background: "#E8531C", color: "#F4C20D", fontFamily: "var(--font-bebas)", fontSize: 14, letterSpacing: "0.16em", padding: "6px 12px 4px", borderRadius: 3 }}>
+              CHOOSE YOUR STANDING
+            </span>
+            <h2 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(40px,6vw,76px)", lineHeight: 0.92, color: "#163F37", margin: "16px 0 0" }}>
+              MEMBERSHIP TIERS
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24, alignItems: "start" }}>
+            {tiers.map((tier) => {
+              const t = themes[tier.accent];
+              return (
+                <div key={tier.name} className="flex flex-col" style={{ position: "relative", background: t.cardBg, border: t.cardBorder, borderRadius: 8, overflow: "hidden", boxShadow: "0 8px 22px rgba(22,63,55,0.10)", minHeight: "100%" }}>
+                  <div style={{ height: 7, background: t.topBar }} />
+                  <div className="flex flex-col flex-1" style={{ padding: "clamp(24px,2.6vw,34px) clamp(22px,2.4vw,30px)" }}>
+                    <span style={{ alignSelf: "flex-start", background: t.tagBg, color: t.tagFg, fontFamily: "var(--font-bebas)", fontSize: 13, letterSpacing: "0.12em", padding: "5px 11px 3px", borderRadius: 3, marginBottom: 18 }}>
+                      {tier.tag}
+                    </span>
+                    <h3 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(30px,3vw,42px)", lineHeight: 0.95, color: t.nameColor, margin: 0 }}>
+                      {tier.name}
+                    </h3>
+                    <p style={{ font: "400 15px/1.45 var(--font-barlow, 'Barlow', sans-serif)", color: t.lineColor, margin: "8px 0 18px", minHeight: 42 }}>
+                      {tier.line}
+                    </p>
+                    <div style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(40px,4.4vw,58px)", lineHeight: 1, color: t.priceColor, marginBottom: 4 }}>
+                      {tier.price}
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Balance on delivery</span>
-                      <span className="text-white">${tier.balance}</span>
+                    <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: t.lineColor }}>
+                      ${tier.down} down &middot; ${tier.balance} on delivery
+                    </span>
+                    <div style={{ height: 1, background: t.rule, margin: "22px 0" }} />
+                    <div className="flex flex-col flex-1" style={{ gap: 13 }}>
+                      {tier.features.map((f) => (
+                        <div key={f} className="flex items-start" style={{ gap: 11 }}>
+                          <span style={{ color: t.tickColor, fontFamily: "var(--font-bebas)", fontSize: 15, flex: "none", marginTop: 1 }}>✦</span>
+                          <span style={{ font: "400 15px/1.4 var(--font-barlow, 'Barlow', sans-serif)", color: t.featColor }}>{f}</span>
+                        </div>
+                      ))}
                     </div>
+                    <a
+                      href={tier.stripeLink}
+                      className="transition-all duration-150 hover:opacity-90 hover:scale-[1.02]"
+                      style={{ marginTop: 28, display: "block", textAlign: "center", background: t.ctaBg, color: t.ctaFg, fontFamily: "var(--font-bebas)", fontSize: 19, letterSpacing: "0.06em", padding: "15px 0 12px", borderRadius: 3, width: "100%" }}
+                    >
+                      SELECT {tier.name.toUpperCase()}
+                    </a>
                   </div>
                 </div>
-
-                <a
-                  href={tier.stripeLink}
-                  className="block w-full py-3 font-bold text-center transition-opacity duration-300 hover:opacity-90"
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    backgroundColor: tier.featured ? "#FFFF00" : "#0088CC",
-                    color: tier.featured ? "#000" : "#FFF",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  Join StashHouse
-                </a>
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="px-6 py-20 max-w-7xl mx-auto border-t border-gray-800">
-        <h3 className="text-4xl font-bold mb-12" style={{ fontFamily: "var(--font-bebas)" }}>
-          How It Works
-        </h3>
-
-        <div className="grid md:grid-cols-4 gap-8">
-          {[
-            { num: "1", color: "#FFFF00", title: "Choose & Pay", desc: "Select your tier. Pay the down payment." },
-            { num: "2", color: "#0088CC", title: "Intake Form", desc: "Tell us your vision. Subject, style, mood, references." },
-            { num: "3", color: "#FFD700", title: "Creation", desc: "4–6 weeks. Hand-original, one-of-a-kind." },
-            { num: "4", color: "#FFFF00", title: "Delivery", desc: "Pay balance. Own the art. Join the community." },
-          ].map((step) => (
-            <div key={step.num}>
-              <div className="text-4xl font-bold mb-4" style={{ color: step.color, fontFamily: "var(--font-bebas)" }}>
-                {step.num}
+      {/* PROCESS */}
+      <section className="relative overflow-hidden" style={{ background: "#163F37", color: "#fff", padding: "clamp(56px,8vw,104px) clamp(20px,5vw,56px)" }}>
+        <div className="absolute pointer-events-none" style={{ bottom: "-16%", right: "-8%", width: "min(46vw,520px)", height: "min(46vw,520px)", opacity: 0.14, animation: "spin-slow 70s linear infinite" }}>
+          <Sunflower style={{ width: "100%", height: "100%" }} />
+        </div>
+        <div className="relative" style={{ maxWidth: 1180, margin: "0 auto" }}>
+          <div style={{ marginBottom: "clamp(36px,5vw,56px)" }}>
+            <span style={{ display: "inline-block", background: "#F4C20D", color: "#163F37", fontFamily: "var(--font-bebas)", fontSize: 14, letterSpacing: "0.16em", padding: "6px 12px 4px", borderRadius: 3 }}>
+              FROM JOIN TO HANGING ON YOUR WALL
+            </span>
+            <h2 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(40px,6vw,76px)", lineHeight: 0.92, color: "#fff", margin: "16px 0 0" }}>
+              THE PROCESS
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "rgba(255,255,255,0.14)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 8, overflow: "hidden" }}>
+            {processSteps.map((s) => (
+              <div key={s.n} style={{ background: "#163F37", padding: "clamp(24px,2.6vw,34px)" }}>
+                <div style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(36px,3.6vw,52px)", lineHeight: 1, color: "#F4C20D" }}>{s.n}</div>
+                <h4 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(22px,2vw,28px)", color: "#fff", margin: "12px 0 8px" }}>{s.t}</h4>
+                <p style={{ font: "300 15px/1.55 var(--font-barlow, 'Barlow', sans-serif)", color: "#aec7bd", margin: 0 }}>{s.d}</p>
               </div>
-              <h4 className="text-lg font-bold mb-2">{step.title}</h4>
-              <p className="text-gray-400">{step.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="text-center" style={{ marginTop: "clamp(40px,5vw,60px)" }}>
+            <Link
+              href="/intake"
+              className="transition-all duration-150 hover:bg-white hover:text-[#163F37] hover:scale-[1.03]"
+              style={{ display: "inline-block", fontFamily: "var(--font-bebas)", fontSize: 22, letterSpacing: "0.06em", padding: "17px 44px 14px", borderRadius: 3, background: "#E8531C", color: "#fff" }}
+            >
+              START YOUR COMMISSION
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-6 py-12 max-w-7xl mx-auto text-center border-t border-gray-800">
-        <p className="text-sm text-gray-500 mb-4">
-          Limited first round: 50 members. Certificate of authenticity included.
-        </p>
-        <div className="flex justify-center gap-6 text-xs text-gray-600 mb-4">
-          <Link href="/faq" className="hover:text-gray-400 transition-colors">
-            FAQ & Guidelines
-          </Link>
-          <a href="mailto:commissions@stashhousegallery.com" className="hover:text-gray-400 transition-colors">
-            commissions@stashhousegallery.com
-          </a>
-        </div>
-        <p className="text-xs text-gray-700">&copy; 2026 StashHouse Gallery. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
