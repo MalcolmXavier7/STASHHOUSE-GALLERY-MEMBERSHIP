@@ -253,15 +253,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="text-center" style={{ marginTop: "clamp(40px,5vw,60px)" }}>
-            <Link
-              href="/intake"
-              className="transition-all duration-150 hover:bg-white hover:text-[#163F37] hover:scale-[1.03]"
-              style={{ display: "inline-block", fontFamily: "var(--font-bebas)", fontSize: 22, letterSpacing: "0.06em", padding: "17px 44px 14px", borderRadius: 3, background: "#E8531C", color: "#fff" }}
-            >
-              START YOUR COMMISSION
-            </Link>
-          </div>
         </div>
       </section>
 
