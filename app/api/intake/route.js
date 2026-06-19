@@ -6,9 +6,13 @@ import { Resend } from "resend";
 const COUNTER_PATH = join(process.cwd(), "data", "member-count.json");
 const NOTIFY_EMAIL = "info@malcolmxavier.com";
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+let _resend = null;
+function getResend() {
+  if (_resend) return _resend;
+  const key = process.env.RESEND_API_KEY?.trim();
+  if (key) _resend = new Resend(key);
+  return _resend;
+}
 
 async function getNextNumber() {
   try {
@@ -103,6 +107,7 @@ export async function POST(request) {
   console.log(JSON.stringify(submission, null, 2));
   console.log("=============================");
 
+  const resend = getResend();
   if (resend) {
     try {
       await resend.emails.send({
