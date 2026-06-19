@@ -60,3 +60,28 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+@keyframes work-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.work-ticker {
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-ticker-track {
+  display: flex;
+  gap: clamp(16px, 2vw, 24px);
+  width: max-content;
+  animation: work-scroll 35s linear infinite;
+}
+
+.work-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.work-ticker-item {
+  flex: none;
+}

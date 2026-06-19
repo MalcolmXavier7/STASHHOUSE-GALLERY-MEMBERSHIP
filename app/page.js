@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Sunflower from "./components/Sunflower";
 import SeenOn from "./components/SeenOn";
+import PastWork from "./components/PastWork";
 
 const commitBullets = [
   "A hand-original — painted, not printed, not generated",
@@ -263,6 +264,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PastWork />
 
       <Footer />
     </div>
