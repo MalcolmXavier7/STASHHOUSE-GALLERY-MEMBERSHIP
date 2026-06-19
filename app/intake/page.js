@@ -139,7 +139,7 @@ export default function IntakePage() {
                   WELCOME TO STASHHOUSE
                 </h2>
                 <p style={{ font: "300 17px/1.6 var(--font-barlow, 'Barlow', sans-serif)", color: "#3a4a44", margin: "14px 0 0" }}>
-                  Your intake is in. Malcolm Xavior 7 will review your story and reach out personally before work begins.
+                  Your intake is in. Malcolm Xavier 7 will review your story and reach out personally before work begins.
                 </p>
               </div>
 

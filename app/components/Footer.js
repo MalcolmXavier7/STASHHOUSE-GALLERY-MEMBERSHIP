@@ -35,7 +35,7 @@ export default function Footer() {
         style={{ maxWidth: 1180, margin: "40px auto 0", paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.12)", gap: 12 }}
       >
         <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: "#7e9389" }}>
-          &copy; 2026 StashHouse Gallery &middot; A Malcolm Xavior 7 project
+          &copy; 2026 StashHouse Gallery &middot; A Malcolm Xavier 7 project
         </span>
         <span style={{ font: "400 13px var(--font-barlow, 'Barlow', sans-serif)", color: "#7e9389" }}>
           Made by hand. ✦

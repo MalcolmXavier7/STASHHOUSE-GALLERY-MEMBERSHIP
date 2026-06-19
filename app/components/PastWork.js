@@ -5,7 +5,7 @@ const works = [
   { src: "/commsionns/IMG_9086 (1).JPEG", alt: "Commission — hand-original artwork" },
   { src: "/commsionns/IMG_9087.JPEG", alt: "Commission — gold leaf detail" },
   { src: "/commsionns/IMG_9325.JPEG", alt: "Commission — mixed media on canvas" },
-  { src: "/commsionns/IMG_9371.JPEG", alt: "Commission — Malcolm Xavior 7 original" },
+  { src: "/commsionns/IMG_9371.JPEG", alt: "Commission — Malcolm Xavier 7 original" },
 ];
 
 export default function PastWork() {

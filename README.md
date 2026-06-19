@@ -1,12 +1,12 @@
 # StashHouse Gallery — Membership Platform
 
-Hand-original commission platform by **Malcolm Xavior 7**. Art, technology, and culture — built by hand, amplified by intention.
+Hand-original commission platform by **Malcolm Xavier 7**. Art, technology, and culture — built by hand, amplified by intention.
 
 > *"You are enough. Your process is valid."*
 
 ## What This Is
 
-StashHouse Gallery Memberships are hand-original commission artwork — acrylic, oil, and gold leaf on canvas. Each piece is painted by Malcolm Xavior 7, signed, authenticated, and made for one owner. This isn't a print shop. It's a community entry point for people who choose intention over performance.
+StashHouse Gallery Memberships are hand-original commission artwork — acrylic, oil, and gold leaf on canvas. Each piece is painted by Malcolm Xavier 7, signed, authenticated, and made for one owner. This isn't a print shop. It's a community entry point for people who choose intention over performance.
 
 **Live:** [stashhousegallery.shop](https://www.stashhousegallery.shop)
 
@@ -99,7 +99,7 @@ RESEND_API_KEY=re_your_key_here
 
 ## The Artist
 
-Malcolm Xavior 7 has spent 15+ years in hip-hop visual culture, built NTWRK to 9K+ sales and 4M+ views, and now creates hand-original artwork combined with AI systems. He's not a "coder who paints" — he's a builder who picks the tool that serves the intention.
+Malcolm Xavier 7 has spent 15+ years in hip-hop visual culture, built NTWRK to 9K+ sales and 4M+ views, and now creates hand-original artwork combined with AI systems. He's not a "coder who paints" — he's a builder who picks the tool that serves the intention.
 
 The mission: Show people they're enough. That their process is valid. That they can build something real if they're willing to be consistent and intentional.
 
@@ -119,4 +119,4 @@ The mission: Show people they're enough. That their process is valid. That they 
 
 ---
 
-Built by Malcolm Xavior 7 · Made by hand. ✦
+Built by Malcolm Xavier 7 · Made by hand. ✦
