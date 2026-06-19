@@ -85,3 +85,22 @@ body {
 .work-ticker-item {
   flex: none;
 }
+
+.grid-hero { grid-template-columns: 1fr; }
+.grid-mission { grid-template-columns: 1fr; }
+.grid-tiers { grid-template-columns: 1fr; }
+.grid-process { grid-template-columns: 1fr; }
+.grid-form-2col { grid-template-columns: 1fr; }
+
+@media (min-width: 640px) {
+  .grid-form-2col { grid-template-columns: 1fr 1fr; }
+  .grid-process { grid-template-columns: 1fr 1fr; }
+  .grid-tiers { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) {
+  .grid-hero { grid-template-columns: 1.02fr 0.98fr; }
+  .grid-mission { grid-template-columns: 1fr 1fr; }
+  .grid-tiers { grid-template-columns: repeat(3, 1fr); }
+  .grid-process { grid-template-columns: repeat(3, 1fr); }
+}

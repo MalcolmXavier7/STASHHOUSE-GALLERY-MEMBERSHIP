@@ -21,15 +21,17 @@ export default function Nav() {
           <span style={{ fontFamily: "var(--font-bebas)", fontSize: 12, letterSpacing: "0.34em", color: "#F4C20D" }}>GALLERY</span>
         </span>
       </Link>
-      <div className="flex items-center" style={{ gap: "clamp(14px,2.4vw,30px)" }}>
+      <div className="flex items-center" style={{ gap: "clamp(10px,2.4vw,30px)" }}>
         <Link
           href="/"
+          className="hidden md:block"
           style={{ fontFamily: "var(--font-bebas)", fontSize: 18, letterSpacing: "0.1em", color: navColor("/"), padding: "4px 0", whiteSpace: "nowrap" }}
         >
           MEMBERSHIP
         </Link>
         <Link
           href="/faq"
+          className="hidden md:block"
           style={{ fontFamily: "var(--font-bebas)", fontSize: 18, letterSpacing: "0.1em", color: navColor("/faq"), padding: "4px 0" }}
         >
           FAQ
@@ -37,7 +39,7 @@ export default function Nav() {
         <Link
           href="/intake"
           className="transition-colors duration-150 hover:bg-[#163F37] hover:text-[#F4C20D]"
-          style={{ fontFamily: "var(--font-bebas)", fontSize: 18, letterSpacing: "0.06em", padding: "11px 22px 9px", borderRadius: 3, background: "#E8531C", color: "#fff", whiteSpace: "nowrap" }}
+          style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(14px,3.6vw,18px)", letterSpacing: "0.06em", padding: "11px 22px 9px", borderRadius: 3, background: "#E8531C", color: "#fff", whiteSpace: "nowrap" }}
         >
           BECOME A MEMBER
         </Link>

@@ -161,7 +161,7 @@ export default function IntakePage() {
                   <span style={{ fontFamily: "var(--font-bebas)", fontSize: 22, color: "#E8531C" }}>01</span>
                   <h3 style={{ fontFamily: "var(--font-bebas)", fontWeight: 400, fontSize: "clamp(24px,2.4vw,32px)", color: "#163F37", margin: 0 }}>WHO YOU ARE</h3>
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+                <div className="grid-form-2col" style={{ display: "grid", gap: 18 }}>
                   <label className="flex flex-col" style={{ gap: 8 }}>
                     <span style={labelStyle}>FULL NAME</span>
                     <input value={form.name} onChange={set("name")} placeholder="Your name" style={inputStyle} required />
@@ -196,7 +196,7 @@ export default function IntakePage() {
                     <span style={labelStyle}>SUBJECT OR THEME</span>
                     <textarea value={form.subject} onChange={set("subject")} placeholder="What should the piece be about? A subject, a feeling, a moment…" rows={2} style={textareaStyle} required />
                   </label>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+                  <div className="grid-form-2col" style={{ display: "grid", gap: 18 }}>
                     <label className="flex flex-col" style={{ gap: 8 }}>
                       <span style={labelStyle}>COLORS YOU LOVE</span>
                       <input value={form.colors} onChange={set("colors")} placeholder="Palette, tones, what to avoid" style={inputStyle} />

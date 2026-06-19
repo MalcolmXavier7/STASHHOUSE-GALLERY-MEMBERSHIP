@@ -106,7 +106,7 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ background: "#FCF9F2", padding: "clamp(48px,6vw,88px) clamp(20px,5vw,56px) clamp(56px,7vw,96px)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1.02fr 0.98fr", gap: "clamp(32px,5vw,72px)", alignItems: "center" }}>
+        <div className="grid-hero" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gap: "clamp(32px,5vw,72px)", alignItems: "center" }}>
           <div>
             <span style={{ display: "inline-block", background: "#E8531C", color: "#F4C20D", fontFamily: "var(--font-bebas)", fontSize: 15, letterSpacing: "0.16em", padding: "7px 14px 5px", borderRadius: 3 }}>
               STASHHOUSE GALLERY · MEMBERSHIP
@@ -150,7 +150,7 @@ export default function Home() {
 
       {/* WHAT IT IS */}
       <section style={{ background: "#fff", padding: "clamp(56px,8vw,104px) clamp(20px,5vw,56px)" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(32px,5vw,72px)", alignItems: "center" }}>
+        <div className="grid-mission" style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gap: "clamp(32px,5vw,72px)", alignItems: "center" }}>
           <div>
             <span style={{ display: "inline-block", background: "#E8531C", color: "#F4C20D", fontFamily: "var(--font-bebas)", fontSize: 14, letterSpacing: "0.16em", padding: "6px 12px 4px", borderRadius: 3 }}>
               THE MISSION
@@ -184,7 +184,7 @@ export default function Home() {
               MEMBERSHIP TIERS
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24, alignItems: "start" }}>
+          <div className="grid-tiers" style={{ display: "grid", gap: 24, alignItems: "start" }}>
             {tiers.map((tier) => {
               const t = themes[tier.accent];
               return (
@@ -244,7 +244,7 @@ export default function Home() {
               THE PROCESS
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "rgba(255,255,255,0.14)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 8, overflow: "hidden" }}>
+          <div className="grid-process" style={{ display: "grid", gap: 1, background: "rgba(255,255,255,0.14)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 8, overflow: "hidden" }}>
             {processSteps.map((s) => (
               <div key={s.n} style={{ background: "#163F37", padding: "clamp(24px,2.6vw,34px)" }}>
                 <div style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(36px,3.6vw,52px)", lineHeight: 1, color: "#F4C20D" }}>{s.n}</div>
